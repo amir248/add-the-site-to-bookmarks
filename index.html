@@ -45,4 +45,39 @@ function showBookmarkHint() {
     }, 4000);
 }
 </script>
+<h3>From mobile</h3>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit veritatis nam molestiae velit. Asperiores, doloremque saepe, ad, iusto unde beatae magni aperiam molestiae quibusdam eum quas possimus recusandae mollitia praesentium!</p>
+<button onclick="addBookmark()">⭐ В закладки</button>
+
+<script>
+function addBookmark() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            url: window.location.href
+        });
+    } else {
+        alert("Добавьте страницу в закладки через меню браузера");
+    }
+}
+</script>
+<h4>from mobile two version</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At ut dolores doloremque veritatis eius veniam! Dolore accusamus, a temporibus hic laboriosam veniam eum deserunt vitae dolores, itaque impedit facilis dolorum?</p>
+<button onclick="mobileBookmark()">⭐ В закладки</button>
+
+<script>
+function mobileBookmark() {
+    const ua = navigator.userAgent;
+
+    if (/iPhone|iPad|iPod/i.test(ua)) {
+        alert("Нажмите кнопку «Поделиться» (⬆) внизу Safari и выберите «Добавить в закладки» или «На экран Домой».");
+    } 
+    else if (/Android/i.test(ua)) {
+        alert("Откройте меню браузера (⋮) и выберите «Добавить в закладки».");
+    } 
+    else {
+        alert("Нажмите Ctrl + D чтобы добавить страницу в закладки.");
+    }
+}
+</script>
 </html>
