@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add the site to bookmarks</title>
+</head>
+<body>
+    <main>
+    <button onclick="addBookmark()">⭐ Добавить в закладки</button>
+        <article>
+            <h1>add the site to bookmarks</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus maiores veritatis quasi hic sunt maxime ullam eum aperiam cumque earum consequatur qui, sit aliquid, labore, unde ad velit sint sed.</p>
+            <h2>section </h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eveniet, animi quod, doloremque impedit vitae delectus vero totam quasi commodi laboriosam, fugit voluptatem. Delectus maxime voluptates quas aliquam esse! Porro tempore officia facilis tenetur, mollitia dolores blanditiis nobis libero ad nisi quos at culpa sequi eum optio. Illo, exercitationem corporis.</p>
+        </article>
+    </main>
+</body>
+
+<script>
+function addBookmark() {
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    const shortcut = isMac ? '⌘ + D' : 'Ctrl + D';
+    
+    alert('Чтобы добавить страницу в закладки, нажмите ' + shortcut);
+}
+</script>
+<button onclick="showBookmarkHint()">⭐ В закладки</button>
+
+<div id="bookmarkHint" style="display:none; position:fixed; bottom:20px; right:20px; background:#222; color:#fff; padding:15px; border-radius:8px;">
+  Нажмите <span id="shortcut"></span>, чтобы добавить страницу в закладки
+</div>
+
+<script>
+function showBookmarkHint() {
+    const isMac = navigator.platform.toUpperCase().includes('MAC');
+    const shortcut = isMac ? '⌘ + D' : 'Ctrl + D';
+
+    document.getElementById('shortcut').textContent = shortcut;
+    const hint = document.getElementById('bookmarkHint');
+    hint.style.display = 'block';
+
+    setTimeout(() => {
+        hint.style.display = 'none';
+    }, 4000);
+}
+</script>
+</html>
