@@ -9,6 +9,26 @@
     <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
+    <a href="contact.vcf" download>
+  📞 Сохранить контакт
+</a>
+<button onclick="shareSite()">📤 Сохранить ссылку</button>
+
+<script>
+function shareSite() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      url: window.location.href
+    });
+  } else {
+    alert("Скопируйте ссылку и сохраните её.");
+  }
+}
+</script>
+<a href="tel:+79528885656">📞 Позвонить</a><br>
+<a href="https://wa.me/89528885656">💬 WhatsApp</a><br>
+<a href="contact.vcf">💾 Сохранить контакт</a>
     <main>
     <button onclick="addBookmark()">⭐ Добавить в закладки</button>
         <article>
