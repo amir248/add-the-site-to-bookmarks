@@ -14,6 +14,12 @@
             border-radius: 17px;
             padding:7px;
         }
+        body{
+            margin-left: auto;
+            margin-right: auto;
+            width:100%;
+            max-width: 900px;
+        }
     </style>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
@@ -47,10 +53,7 @@ function shareSite() {
             <h2>section </h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab eveniet, animi quod, doloremque impedit vitae delectus vero totam quasi commodi laboriosam, fugit voluptatem. Delectus maxime voluptates quas aliquam esse! Porro tempore officia facilis tenetur, mollitia dolores blanditiis nobis libero ad nisi quos at culpa sequi eum optio. Illo, exercitationem corporis.</p>
         </article>
-    </main>
-</body>
-
-<script>
+        <script>
 function addBookmark() {
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
     const shortcut = isMac ? '⌘ + D' : 'Ctrl + D';
@@ -113,4 +116,8 @@ function mobileBookmark() {
     }
 }
 </script>
+    </main>
+</body>
+
+
 </html>
